@@ -1,0 +1,14 @@
+{
+  "name": "com.yourname.emoji-replacer",
+  "version": "0.1.0",
+  "displayName": "Emoji Sprite Replacer for TMP",
+  "description": "A high-performance Unicode emoji replacement system for TextMeshPro using sprite assets. Supports composite emojis including ZWJ sequences, skin tone modifiers, and regional indicators.",
+  "unity": "2021.3",
+  "author": {
+    "name": "Your Name",
+    "url": "https://github.com/yourname"
+  },
+  "dependencies": {
+    "com.unity.textmeshpro": "3.0.6"
+  }
+}
