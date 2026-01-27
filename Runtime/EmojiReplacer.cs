@@ -13,15 +13,8 @@ public static class EmojiReplacer
 
     [ThreadStatic] private static StringBuilder _sharedSb;
 
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-    private static void AwakeEmojiSystem()
-    {
-        Initialize(TMP_Settings.defaultSpriteAsset.fallbackSpriteAssets[2]);
-    }
-
     public static void Initialize(TMP_SpriteAsset spriteAsset)
     {
-        Debug.Log($"Test - Emoji Initialize(asset name: {spriteAsset.name})");
         if (_initialized) return;
 
         var asset = spriteAsset != null ? spriteAsset : TMP_Settings.defaultSpriteAsset;

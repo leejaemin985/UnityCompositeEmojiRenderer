@@ -10,5 +10,27 @@
   },
   "dependencies": {
     "com.unity.textmeshpro": "3.0.6"
-  }
+  },
+  "samples": [
+    {
+      "displayName": "Twemoji Sample with UMI",
+      "description": "Complete working example with Twemoji sprites and native mobile input support. Requires UMI (https://github.com/mopsicus/umi.git) for native input field functionality.",
+      "path": "Samples~/TwemojiWithUMI"
+    },
+    {
+      "displayName": "Basic Sample",
+      "description": "Minimal example showing core emoji replacement functionality without external dependencies.",
+      "path": "Samples~/BasicSample"
+    }
+  ],
+  "keywords": [
+    "emoji",
+    "textmeshpro",
+    "tmp",
+    "sprite",
+    "unicode",
+    "mobile",
+    "twemoji"
+  ],
+  "license": "MIT"
 }

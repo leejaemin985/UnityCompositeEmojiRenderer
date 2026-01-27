@@ -1,3 +1,82 @@
+/// <summary>
+/// Emoji Sprite Asset Generator for TextMeshPro
+/// 
+/// This tool converts emoji sprite images into a TMP Sprite Asset that can be used
+/// for high-performance emoji rendering in TextMeshPro.
+/// 
+/// HOW TO USE:
+/// 1. Prepare your emoji sprites:
+///    - Format: PNG with transparent background
+///    - Naming: Use Unicode codepoint format (e.g., "1f600.png" for 😀)
+///    - Place all sprites in a single folder
+/// 
+/// 2. Open the generator:
+///    - Go to Tools > Emoji > Generate TMP Sprite Asset
+/// 
+/// 3. Configure settings:
+///    - Source Folder: Select the folder containing your emoji sprites
+///    - Output Path: Choose where to save the generated TMP Sprite Asset
+///    - Sprite Size: Size of each sprite in the atlas (default: 64x64)
+///    - Atlas Size: Texture atlas size (2048, 4096, etc.)
+/// 
+/// 4. Generate:
+///    - Click "Generate" button
+///    - The tool will create: TMP Sprite Asset, Atlas Texture, Material
+/// 
+/// UPDATING EXISTING SPRITE ASSETS:
+/// 
+/// To add new emojis to an existing sprite asset:
+/// 1. Add new PNG files to your source folder (use Unicode codepoint naming)
+/// 2. Run the generator again with the SAME output path
+/// 3. The tool will regenerate the entire asset including new sprites
+/// 
+/// Example: Adding 🥳 (Party Face)
+/// 1. Find Unicode codepoint: U+1F973
+/// 2. Create/download sprite image
+/// 3. Name it: "1f973.png"
+/// 4. Place in your sprite source folder
+/// 5. Re-run generator
+/// 
+/// SPRITE NAMING CONVENTIONS:
+/// 
+/// Single emoji:
+///   - 😀 (Grinning Face) → "1f600.png"
+///   - 🌍 (Earth Globe) → "1f30d.png"
+/// 
+/// Composite emoji with ZWJ (Zero-Width Joiner):
+///   - 👨‍👩‍👧 (Family) → "1f468-200d-1f469-200d-1f467.png"
+///   - 👨‍💻 (Man Technologist) → "1f468-200d-1f4bb.png"
+/// 
+/// Skin tone modifiers:
+///   - 👋🏻 (Waving Hand: Light) → "1f44b-1f3fb.png"
+///   - 👋🏿 (Waving Hand: Dark) → "1f44b-1f3ff.png"
+/// 
+/// Regional indicators (Flags):
+///   - 🇰🇷 (South Korea) → "1f1f0-1f1f7.png"
+///   - 🇺🇸 (United States) → "1f1fa-1f1f8.png"
+/// 
+/// IMPORTANT NOTES:
+/// - Use lowercase for all hex characters
+/// - Separate multiple codepoints with hyphens (-)
+/// - Include all codepoints including ZWJ (200d) and variation selectors
+/// - The generator will automatically create sprite names matching the filename
+/// 
+/// TROUBLESHOOTING:
+/// 
+/// Q: My emojis aren't showing up after adding new sprites?
+/// A: Make sure you regenerated the sprite asset and assigned it to your TextMeshPro component
+/// 
+/// Q: Atlas texture is too small?
+/// A: Increase the Atlas Size setting (2048 → 4096 → 8192)
+/// 
+/// Q: How do I find Unicode codepoints?
+/// A: Use https://unicode.org/emoji/charts/full-emoji-list.html or https://emojipedia.org
+/// 
+/// Q: Can I use different sprite styles (Apple, Google, etc.)?
+/// A: Yes! Just make sure all sprites follow the naming convention
+/// 
+/// </summary>
+
 #if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
