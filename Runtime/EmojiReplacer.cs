@@ -129,19 +129,8 @@ public static class EmojiReplacer
     private static void AppendCodePoint(StringBuilder sb, int cp)
     {
         if (cp <= 0xFFFF)
-        {
-            char c = (char)cp;
-            switch (c)
-            {
-                case '&': sb.Append("&amp;"); break;
-                case '<': sb.Append("&lt;"); break;
-                case '>': sb.Append("&gt;"); break;
-                default: sb.Append(c); break;
-            }
-        }
+            sb.Append((char)cp);
         else
-        {
             sb.Append(char.ConvertFromUtf32(cp));
-        }
     }
 }
