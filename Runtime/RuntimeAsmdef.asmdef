@@ -1,6 +1,6 @@
 {
     "name": "RuntimeAsmdef",
-    "rootNamespace": "",
+    "rootNamespace": "CompositeEmoji",
     "references": [
         "Unity.TextMeshPro"
     ],

@@ -1,60 +1,63 @@
 using System;
 
-public sealed class Trie
+namespace CompositeEmoji
 {
-    private readonly TrieNode _root = new TrieNode();
-
-    public void Insert(int[] codePoints, string spriteTag)
+    public sealed class Trie
     {
-        if (codePoints == null || codePoints.Length == 0)
-            return;
+        private readonly TrieNode _root = new TrieNode();
 
-        var node = _root;
-        foreach (var cp in codePoints)
+        public void Insert(int[] codePoints, string spriteTag)
         {
-            node = node.GetOrAddChild(cp);
-        }
-        node.IsEnd = true;
-        node.SpriteTag = spriteTag;
-    }
+            if (codePoints == null || codePoints.Length == 0)
+                return;
 
-    public bool TryMatchLongest(Span<int> buffer, int start, int length, out int matchLength, out string spriteTag)
-    {
-        matchLength = 0;
-        spriteTag = null;
-
-        if (start >= length)
-            return false;
-
-        var node = _root;
-        int lastMatchLength = 0;
-        string lastMatchTag = null;
-
-        for (int i = start; i < length; i++)
-        {
-            node = node.GetChild(buffer[i]);
-            if (node == null)
-                break;
-
-            if (node.IsEnd)
+            var node = _root;
+            foreach (var cp in codePoints)
             {
-                lastMatchLength = i - start + 1;
-                lastMatchTag = node.SpriteTag;
+                node = node.GetOrAddChild(cp);
             }
+            node.IsEnd = true;
+            node.SpriteTag = spriteTag;
         }
 
-        if (lastMatchTag != null)
+        public bool TryMatchLongest(Span<int> buffer, int start, int length, out int matchLength, out string spriteTag)
         {
-            matchLength = lastMatchLength;
-            spriteTag = lastMatchTag;
-            return true;
+            matchLength = 0;
+            spriteTag = null;
+
+            if (start >= length)
+                return false;
+
+            var node = _root;
+            int lastMatchLength = 0;
+            string lastMatchTag = null;
+
+            for (int i = start; i < length; i++)
+            {
+                node = node.GetChild(buffer[i]);
+                if (node == null)
+                    break;
+
+                if (node.IsEnd)
+                {
+                    lastMatchLength = i - start + 1;
+                    lastMatchTag = node.SpriteTag;
+                }
+            }
+
+            if (lastMatchTag != null)
+            {
+                matchLength = lastMatchLength;
+                spriteTag = lastMatchTag;
+                return true;
+            }
+
+            return false;
         }
 
-        return false;
-    }
-
-    public void Clear()
-    {
-        _root.Children?.Clear();
+        public void Clear()
+        {
+            _root.Children?.Clear();
+        }
     }
 }

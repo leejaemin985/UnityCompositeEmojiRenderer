@@ -1,6 +1,6 @@
 {
     "name": "EditorAsmdef",
-    "rootNamespace": "",
+    "rootNamespace": "CompositeEmoji.Editor",
     "references": [
         "Unity.TextMeshPro",
         "Unity.TextMeshPro.Editor",
