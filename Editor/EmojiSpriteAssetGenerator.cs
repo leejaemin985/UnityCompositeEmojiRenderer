@@ -173,7 +173,8 @@ namespace CompositeEmoji.Editor
                     copy.Apply();
 
                     textures.Add(copy);
-                    names.Add(Path.GetFileNameWithoutExtension(path).ToUpperInvariant());
+                    // README/주석 컨벤션과 일치하도록 lowercase로 통일 (예: "1f600", "1f468-200d-1f4bb")
+                    names.Add(Path.GetFileNameWithoutExtension(path).ToLowerInvariant());
 
                     if (i % 100 == 0)
                     {
