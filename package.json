@@ -1,6 +1,6 @@
 {
   "name": "com.leejaemin.composite-emoji-replacer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Composite Emoji Renderer for TMP",
   "description": "A high-performance Unicode emoji replacement system for TextMeshPro using sprite assets. Supports composite emojis including ZWJ sequences, skin tone modifiers, and regional indicators.",
   
