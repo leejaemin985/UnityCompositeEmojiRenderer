@@ -1,4 +1,4 @@
-# Emoji Sprite Replacer for TMP
+﻿# Emoji Sprite Replacer for TMP
 
 High-performance Unicode emoji replacement system for TextMeshPro using sprite assets. Optimized for mobile with full support for composite emojis, skin tones, and flags.
 
@@ -13,13 +13,13 @@ High-performance Unicode emoji replacement system for TextMeshPro using sprite a
 
 **Via Package Manager:**
 1. `Window > Package Manager` → `+` → `Add package from git URL...`
-2. Enter: `https://github.com/yourname/emoji-replacer.git`
+2. Enter: `https://github.com/leejaemin985/UnityCompositeEmojiRenderer.git`
 
 **Via manifest.json:**
 ```json
 {
   "dependencies": {
-    "com.yourname.emoji-replacer": "https://github.com/yourname/emoji-replacer.git"
+    "com.leejaemin.composite-emoji-replacer": "https://github.com/leejaemin985/UnityCompositeEmojiRenderer.git"
   }
 }
 ```
@@ -68,8 +68,8 @@ inputField.onValueChanged.AddListener(text => {
 ## Samples
 
 Import via Package Manager → Samples section:
-- **Twemoji Sample**: 3,000+ pre-baked emojis with demo scenes
-- Includes sprite source files and generation examples
+Basic Sample: minimal demo scene and generated TMP SpriteAsset example.
+Emoji artwork is not bundled. Use Twemoji or your own emoji PNG set to regenerate assets.
 
 ## Adding/Updating Emojis
 

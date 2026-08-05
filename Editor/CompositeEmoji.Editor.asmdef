@@ -1,10 +1,10 @@
-{
-    "name": "EditorAsmdef",
+﻿{
+    "name": "CompositeEmoji.Editor",
     "rootNamespace": "CompositeEmoji.Editor",
     "references": [
         "Unity.TextMeshPro",
         "Unity.TextMeshPro.Editor",
-        "RuntimeAsmdef"
+        "CompositeEmoji.Runtime"
     ],
     "includePlatforms": [
         "Editor"
